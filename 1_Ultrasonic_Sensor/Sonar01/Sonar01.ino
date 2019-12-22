@@ -1,3 +1,5 @@
+#include <NewPing.h>
+
 int trigPin = 11;
 int echoPin = 12;
 long duration, cm, inches;
@@ -23,6 +25,6 @@ void loop() {
   Serial.print("in, ");
   Serial.print(cm);
   Serial.print("cm");
-  Serial.pintln();
+  Serial.println();
   delay(250);
 }
