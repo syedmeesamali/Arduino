@@ -3,17 +3,16 @@ int echoPin = 12;       //Echo response pin
 long duration, cm, inches;
 const int buzzer = 8;
 
-void playBuzzer() {
+void playBuzzer() {   //This is buzzer playing routine
   pinMode (buzzer, OUTPUT);
-  delay (10);
+  delay (50);
   analogWrite (buzzer, 0);
   delay (10);
   analogWrite (buzzer, 255);
-  delay (10);
+  delay (50);
 }
 
-void setup() {
-  pinMode(LED_BUILTIN, OUTPUT);
+void setup() {   //Set the pin conditions
   Serial.begin(9600);
   pinMode(trigPin, OUTPUT);
   pinMode(echoPin, INPUT);
@@ -26,7 +25,7 @@ void LED_Blink() {
   delay(100);                       // wait for a second
 }
 
-void loop() {
+void loop() { //Main loop which will run forever
   digitalWrite(trigPin, LOW);
   delayMicroseconds(5);
   digitalWrite(trigPin, HIGH);
@@ -36,7 +35,7 @@ void loop() {
   duration = pulseIn(echoPin, HIGH);
   cm = (duration/2) / 29.1;
   inches = (duration/2) / 74;
-  if (inches < 3)
+  if (inches < 3)  //Play buzzer and blink the built-in LED if distance less than 3 inches
   {
     playBuzzer();
     LED_Blink();
