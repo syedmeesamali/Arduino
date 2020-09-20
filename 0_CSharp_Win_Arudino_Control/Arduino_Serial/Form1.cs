@@ -1,7 +1,5 @@
 ﻿using System;
 using System.IO.Ports;
-using System.Runtime.InteropServices;
-using System.Threading;
 using System.Windows.Forms;
 
 namespace Arduino_Serial
@@ -21,49 +19,24 @@ namespace Arduino_Serial
                 serialPort.Open();
                 _continue = true;
             }
-
         }
-
 
         //Main click button to receive and dispaly data
         private void button1_Click(object sender, EventArgs e)
         {
-            
             if (serialPort != null)
             {
                 while (_continue)
                 {
-                    int readValue = 0;
                     int calibration = 0;
-                    calibration = ReadValues(readValue);
-                    textBox1.Text = calibration.ToString();
-                    if (calibration > 100)
-                    {
-                        int diff = calibration - 100;
-                        pBar.Value = calibration - diff;
-                    } else
-                    {
-                        pBar.Value = calibration;
-                    }
-                    
+                    calibration = Int32.Parse(serialPort.ReadLine()) / 10;
+                    textBox1.Text = (calibration * 10).ToString();
+                    pBar.Value = calibration;
                 }
             } else
             {
-                serialPort = new SerialPort("COM3", 9600);      //Common baud rate of 9600
-                serialPort.Open();
-                _continue = true;
+                Application.Exit(); //End the application
             }
         }
-
-        //Simple function to reach character from serial port
-        private int ReadValues(int msg)
-        {
-            if (serialPort != null && serialPort.IsOpen)
-            {
-                msg = serialPort.ReadChar();
-            }
-            return msg;
-        }
-
     }//End of main class
 }//End of namespace
