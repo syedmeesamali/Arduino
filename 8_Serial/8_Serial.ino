@@ -1,4 +1,4 @@
-const int led = 13;
+int led = 13;
 char incomingValue = 0;
 
 void setup() {
@@ -15,7 +15,7 @@ void loop() {
       Serial.print("\n");
       if (incomingValue == '1')
         digitalWrite(led, HIGH);
-       else 
+       else if (incomingValue == '0')
         digitalWrite(led, LOW);
     }
 }
