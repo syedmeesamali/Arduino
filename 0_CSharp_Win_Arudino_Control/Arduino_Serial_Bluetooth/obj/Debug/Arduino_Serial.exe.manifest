@@ -42,14 +42,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Arduino_Serial.exe" size="125864">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Arduino_Serial.exe" size="125352">
       <assemblyIdentity name="Arduino_Serial" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>cIJA1e79tOYSzrTmjYUXaNLM/0x+lpr1UJK+tBW2rcg=</dsig:DigestValue>
+        <dsig:DigestValue>ICvHGm0AdDWFWH9IWq1uY1GPCTMNFbNMW6vHHir3gJk=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

@@ -15,7 +15,7 @@ namespace Arduino_Serial
             {
                 try
                 {
-                    serialPort = new SerialPort("COM6", 9600);      //Common baud rate of 9600
+                    serialPort = new SerialPort("COM3", 9600);      //Common baud rate of 9600
                     serialPort.Open();
                 } catch (Exception ex)
                 {
@@ -25,27 +25,14 @@ namespace Arduino_Serial
             }
         }
 
-        //Main click button to receive and dispaly data
-        private void button1_Click(object sender, EventArgs e)
+        private void btnOn_Click(object sender, EventArgs e)
         {
-            string valToSend;
-            valToSend = textBox1.Text;
-            if (serialPort.IsOpen)
-            {
-                serialPort.Write(valToSend);
-            } else
-            {
-                try
-                {
-                    serialPort = new SerialPort("COM5", 9600);      //Common baud rate of 9600
-                    serialPort.Open();
-                    serialPort.Write(valToSend);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Exception happened ...... !" + ex);
-                }
-            }
+            serialPort.Write("1");
+        }
+
+        private void btnOff_Click(object sender, EventArgs e)
+        {
+            serialPort.Write("0");
         }
     }//End of main class
 }//End of namespace
