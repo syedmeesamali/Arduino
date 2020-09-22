@@ -13,8 +13,15 @@ namespace Arduino_Serial
             InitializeComponent();
             if (serialPort == null)
             {
-                serialPort = new SerialPort("COM5", 9600);      //Common baud rate of 9600
-                serialPort.Open();
+                try
+                {
+                    serialPort = new SerialPort("COM5", 9600);      //Common baud rate of 9600
+                    serialPort.Open();
+                } catch (Exception ex)
+                {
+                    MessageBox.Show("Exception happened ...... !" + ex);
+                }
+                
             }
         }
 
