@@ -29,39 +29,90 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.btnOn = new System.Windows.Forms.Button();
-            this.btnOff = new System.Windows.Forms.Button();
+            this.Degree_0 = new System.Windows.Forms.Button();
+            this.Degree_45 = new System.Windows.Forms.Button();
+            this.Degree_90 = new System.Windows.Forms.Button();
+            this.Degree_135 = new System.Windows.Forms.Button();
+            this.Degree_180 = new System.Windows.Forms.Button();
+            this.cmdExit = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btnOn
+            // Degree_0
             // 
-            this.btnOn.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOn.Location = new System.Drawing.Point(85, 85);
-            this.btnOn.Name = "btnOn";
-            this.btnOn.Size = new System.Drawing.Size(88, 51);
-            this.btnOn.TabIndex = 0;
-            this.btnOn.Text = "ON";
-            this.btnOn.UseVisualStyleBackColor = true;
-            this.btnOn.Click += new System.EventHandler(this.btnOn_Click);
+            this.Degree_0.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Degree_0.Location = new System.Drawing.Point(28, 180);
+            this.Degree_0.Name = "Degree_0";
+            this.Degree_0.Size = new System.Drawing.Size(88, 51);
+            this.Degree_0.TabIndex = 0;
+            this.Degree_0.Text = "0 Deg";
+            this.Degree_0.UseVisualStyleBackColor = true;
+            this.Degree_0.Click += new System.EventHandler(this.btnOn_Click);
             // 
-            // btnOff
+            // Degree_45
             // 
-            this.btnOff.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOff.Location = new System.Drawing.Point(224, 85);
-            this.btnOff.Name = "btnOff";
-            this.btnOff.Size = new System.Drawing.Size(88, 51);
-            this.btnOff.TabIndex = 1;
-            this.btnOff.Text = "OFF";
-            this.btnOff.UseVisualStyleBackColor = true;
-            this.btnOff.Click += new System.EventHandler(this.btnOff_Click);
+            this.Degree_45.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Degree_45.Location = new System.Drawing.Point(75, 84);
+            this.Degree_45.Name = "Degree_45";
+            this.Degree_45.Size = new System.Drawing.Size(88, 51);
+            this.Degree_45.TabIndex = 1;
+            this.Degree_45.Text = "45 deg";
+            this.Degree_45.UseVisualStyleBackColor = true;
+            this.Degree_45.Click += new System.EventHandler(this.btnOff_Click);
+            // 
+            // Degree_90
+            // 
+            this.Degree_90.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Degree_90.Location = new System.Drawing.Point(187, 22);
+            this.Degree_90.Name = "Degree_90";
+            this.Degree_90.Size = new System.Drawing.Size(88, 51);
+            this.Degree_90.TabIndex = 2;
+            this.Degree_90.Text = "90 deg";
+            this.Degree_90.UseVisualStyleBackColor = true;
+            this.Degree_90.Click += new System.EventHandler(this.Degree_135_Click);
+            // 
+            // Degree_135
+            // 
+            this.Degree_135.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Degree_135.Location = new System.Drawing.Point(300, 84);
+            this.Degree_135.Name = "Degree_135";
+            this.Degree_135.Size = new System.Drawing.Size(88, 51);
+            this.Degree_135.TabIndex = 3;
+            this.Degree_135.Text = "135 deg";
+            this.Degree_135.UseVisualStyleBackColor = true;
+            this.Degree_135.Click += new System.EventHandler(this.Degree_180_Click);
+            // 
+            // Degree_180
+            // 
+            this.Degree_180.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Degree_180.Location = new System.Drawing.Point(374, 180);
+            this.Degree_180.Name = "Degree_180";
+            this.Degree_180.Size = new System.Drawing.Size(88, 51);
+            this.Degree_180.TabIndex = 4;
+            this.Degree_180.Text = "180 deg";
+            this.Degree_180.UseVisualStyleBackColor = true;
+            this.Degree_180.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // cmdExit
+            // 
+            this.cmdExit.Location = new System.Drawing.Point(176, 185);
+            this.cmdExit.Name = "cmdExit";
+            this.cmdExit.Size = new System.Drawing.Size(124, 36);
+            this.cmdExit.TabIndex = 5;
+            this.cmdExit.Text = "&Exit";
+            this.cmdExit.UseVisualStyleBackColor = true;
+            this.cmdExit.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(426, 232);
-            this.Controls.Add(this.btnOff);
-            this.Controls.Add(this.btnOn);
+            this.ClientSize = new System.Drawing.Size(489, 279);
+            this.Controls.Add(this.cmdExit);
+            this.Controls.Add(this.Degree_180);
+            this.Controls.Add(this.Degree_135);
+            this.Controls.Add(this.Degree_90);
+            this.Controls.Add(this.Degree_45);
+            this.Controls.Add(this.Degree_0);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "Form1";
@@ -73,8 +124,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnOn;
-        private System.Windows.Forms.Button btnOff;
+        private System.Windows.Forms.Button Degree_0;
+        private System.Windows.Forms.Button Degree_45;
+        private System.Windows.Forms.Button Degree_90;
+        private System.Windows.Forms.Button Degree_135;
+        private System.Windows.Forms.Button Degree_180;
+        private System.Windows.Forms.Button cmdExit;
     }
 }
 
