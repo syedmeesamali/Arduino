@@ -11,19 +11,13 @@ namespace Arduino_Serial
         public Form1()
         {
             InitializeComponent();
-            if (serialPort == null)
+            serialPort = new SerialPort("COM3", 9600);      //Common baud rate of 9600
+            try
+            {       
+                serialPort.Open();
+            } catch (Exception ex)
             {
-                try
-                {
-                    serialPort = new SerialPort("COM3", 57600);      //Common baud rate of 9600
-                    serialPort.ReadTimeout = (2000);
-                    serialPort.WriteTimeout = (2000);
-                    serialPort.Open();
-                } catch (Exception ex)
-                {
-                    MessageBox.Show("Exception happened ...... !" + ex);
-                }
-                
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -96,5 +90,15 @@ namespace Arduino_Serial
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void trackBar1_Scroll(object sender, EventArgs e)
+        {
+            if(serialPort.IsOpen)
+            {
+                serialPort.Write(trackBar1.Value.ToString());
+                label2.Text = trackBar1.Value.ToString();
+            }
+        }
+
     }//End of main class
 }//End of namespace
