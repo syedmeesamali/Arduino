@@ -16,6 +16,8 @@ namespace Arduino_Serial
                 try
                 {
                     serialPort = new SerialPort("COM3", 57600);      //Common baud rate of 9600
+                    serialPort.ReadTimeout = (2000);
+                    serialPort.WriteTimeout = (2000);
                     serialPort.Open();
                 } catch (Exception ex)
                 {
@@ -25,34 +27,74 @@ namespace Arduino_Serial
             }
         }
 
-        private void btnOn_Click(object sender, EventArgs e)
-        {
-            serialPort.Write("1");
-        }
-
-        private void btnOff_Click(object sender, EventArgs e)
-        {
-            serialPort.Write("2");
-        }
-
-        private void Degree_135_Click(object sender, EventArgs e)
-        {
-            serialPort.Write("3");
-        }
-
-        private void Degree_180_Click(object sender, EventArgs e)
-        {
-            serialPort.Write("4");
-        }
-
-        private void button2_Click(object sender, EventArgs e)
+        private void cmdExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Degree_0_Click(object sender, EventArgs e)
         {
-            serialPort.Write("5");
+            try
+            {
+                //serialPort.Open();
+                serialPort.Write("1");          //For 0 Degree movement of servo
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void Degree_45_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //serialPort.Open();
+                serialPort.Write("2");          //For 0 Degree movement of servo
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void Degree_90_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //serialPort.Open();
+                serialPort.Write("3");          //For 0 Degree movement of servo
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void Degree_135_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //serialPort.Open();
+                serialPort.Write("4");          //For 0 Degree movement of servo
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void Degree_180_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //serialPort.Open();
+                serialPort.Write("5");          //For 0 Degree movement of servo
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }//End of main class
 }//End of namespace

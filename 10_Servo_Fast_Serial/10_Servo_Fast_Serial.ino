@@ -11,8 +11,10 @@ void setup() {
 }
 
 void loop() {
-      while (Serial.available() > 0) {
-          if (Serial.read() == '1') {
+     while (Serial.available()) {
+      delay(1);
+      {
+       if (Serial.read() == '1') {
         servo1.write(0);
       }  else if (Serial.read() == '2'){
         servo1.write(45);
@@ -23,6 +25,8 @@ void loop() {
       } else if (Serial.read() == '5'){
         servo1.write(180); 
       }  
-  }//All within serial available
+   }//All within serial available      
+ } //End of while loop
+    
       
 }//End of loop

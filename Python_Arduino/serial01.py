@@ -51,7 +51,7 @@ def waitForArduino():
         if not (msg == 'XXX'):
             print(msg)
 
-SetupSerial(11500, "dev/ttyACM0")
+SetupSerial(11200, "dev/ttyACM0")
 count = 0
 prevTime = time.time()
 while True:

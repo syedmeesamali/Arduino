@@ -46,7 +46,7 @@
             this.Degree_0.TabIndex = 0;
             this.Degree_0.Text = "0 Deg";
             this.Degree_0.UseVisualStyleBackColor = true;
-            this.Degree_0.Click += new System.EventHandler(this.btnOn_Click);
+            this.Degree_0.Click += new System.EventHandler(this.Degree_0_Click);
             // 
             // Degree_45
             // 
@@ -57,7 +57,7 @@
             this.Degree_45.TabIndex = 1;
             this.Degree_45.Text = "45 deg";
             this.Degree_45.UseVisualStyleBackColor = true;
-            this.Degree_45.Click += new System.EventHandler(this.btnOff_Click);
+            this.Degree_45.Click += new System.EventHandler(this.Degree_45_Click);
             // 
             // Degree_90
             // 
@@ -68,7 +68,7 @@
             this.Degree_90.TabIndex = 2;
             this.Degree_90.Text = "90 deg";
             this.Degree_90.UseVisualStyleBackColor = true;
-            this.Degree_90.Click += new System.EventHandler(this.Degree_135_Click);
+            this.Degree_90.Click += new System.EventHandler(this.Degree_90_Click);
             // 
             // Degree_135
             // 
@@ -79,7 +79,7 @@
             this.Degree_135.TabIndex = 3;
             this.Degree_135.Text = "135 deg";
             this.Degree_135.UseVisualStyleBackColor = true;
-            this.Degree_135.Click += new System.EventHandler(this.Degree_180_Click);
+            this.Degree_135.Click += new System.EventHandler(this.Degree_135_Click);
             // 
             // Degree_180
             // 
@@ -90,7 +90,7 @@
             this.Degree_180.TabIndex = 4;
             this.Degree_180.Text = "180 deg";
             this.Degree_180.UseVisualStyleBackColor = true;
-            this.Degree_180.Click += new System.EventHandler(this.button1_Click);
+            this.Degree_180.Click += new System.EventHandler(this.Degree_180_Click);
             // 
             // cmdExit
             // 
@@ -100,7 +100,7 @@
             this.cmdExit.TabIndex = 5;
             this.cmdExit.Text = "&Exit";
             this.cmdExit.UseVisualStyleBackColor = true;
-            this.cmdExit.Click += new System.EventHandler(this.button2_Click);
+            this.cmdExit.Click += new System.EventHandler(this.cmdExit_Click);
             // 
             // Form1
             // 
