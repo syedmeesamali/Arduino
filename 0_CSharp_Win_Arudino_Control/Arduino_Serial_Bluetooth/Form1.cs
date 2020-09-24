@@ -15,7 +15,7 @@ namespace Arduino_Serial
             {
                 try
                 {
-                    serialPort = new SerialPort("COM3", 9600);      //Common baud rate of 9600
+                    serialPort = new SerialPort("COM3", 57600);      //Common baud rate of 9600
                     serialPort.Open();
                 } catch (Exception ex)
                 {
