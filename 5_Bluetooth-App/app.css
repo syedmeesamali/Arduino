@@ -2,7 +2,7 @@
 body {  background-color: linear-gradient(120deg, #f6d365, #fda085); 
     width: 100vw; height: 100vh; display: flex; align-items: center; justify-content: center;}
 header { font-size: 2rem; }
-header, form { min-height: 20vh; display: flex; justify-content: center; align-items: center;}
-form button { padding: 0.5rem; font-size: 2rem; border: none; background: white; 
+header { min-height: 20vh; display: flex; justify-content: center; align-items: center;}
+form button { padding: 0.5rem; font-size: 2rem; background: white; 
 color: #df8885; background: #cf3343; border-spacing: 0.2rem; cursor: pointer; transition: all 0.3s ease; }
 form button:hover { background: #df8885; color: white; }
