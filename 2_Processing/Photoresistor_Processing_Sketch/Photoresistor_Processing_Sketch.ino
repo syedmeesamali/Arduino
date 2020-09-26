@@ -7,5 +7,5 @@ void setup() {
 void loop() {
   int value = analogRead(sensorVal);
   Serial.println(value);
-  delay(500);       //200ms delay before next value
+  delay(100);       //200ms delay before next value
 }//End of loop

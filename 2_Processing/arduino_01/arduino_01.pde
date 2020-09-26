@@ -4,9 +4,12 @@ int serialVal = 0;
 
 //Main setup function
 void setup() {
-  myPort = new Serial(this, Serial.list()[0], 9600);
+  printArray(Serial.list());
+  String portName = Serial.list()[0];
+  myPort = new Serial(this, portName, 9600);
+  print(portName);
   
-  size(800,800);
+  size(1000,1000);
   background(40, 40, 40);
   frameRate(10);      //Canvas animation update frame-rate
 }
@@ -15,18 +18,11 @@ void setup() {
 void draw() {
   background(40, 40, 40);
   fill(255, 255, 255);
-  ellipse(500, 500, serialVal, serialVal);
-}
-
-//READING THE SERIAL MESSAGES FROM ARDUINO
-String buf = "";
-int lf = 10;
-
-void SerialEvent(Serial p) {
-  int c = myPort.read();  
-  serialVal = int(buf);
-  if (c == lf) {
-    serialVal = int(buf);
-    buf = "";
+  if (myPort.available() > 0)
+  {
+    String val;
+    val = myPort.readStringUntil('\n');
+    println(val);
+    ellipse(200, 200, parseFloat(val)/2, parseFloat(val)/2);
   } 
 }

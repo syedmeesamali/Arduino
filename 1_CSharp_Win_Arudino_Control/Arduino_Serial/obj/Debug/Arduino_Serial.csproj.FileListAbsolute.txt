@@ -12,3 +12,10 @@ D:\repos\Arduino\0_CSharp_Win_Arudino_Control\Arduino_Serial\bin\Debug\Arduino_S
 D:\repos\Arduino\0_CSharp_Win_Arudino_Control\Arduino_Serial\bin\Debug\Arduino_Serial.application
 D:\repos\Arduino\0_CSharp_Win_Arudino_Control\Arduino_Serial\obj\Debug\Arduino_Serial.exe.manifest
 D:\repos\Arduino\0_CSharp_Win_Arudino_Control\Arduino_Serial\obj\Debug\Arduino_Serial.application
+D:\repos\Arduino\1_CSharp_Win_Arudino_Control\Arduino_Serial\obj\Debug\Arduino_Serial.csprojAssemblyReference.cache
+D:\repos\Arduino\1_CSharp_Win_Arudino_Control\Arduino_Serial\obj\Debug\Arduino_Serial.Form1.resources
+D:\repos\Arduino\1_CSharp_Win_Arudino_Control\Arduino_Serial\obj\Debug\Arduino_Serial.Properties.Resources.resources
+D:\repos\Arduino\1_CSharp_Win_Arudino_Control\Arduino_Serial\obj\Debug\Arduino_Serial.csproj.GenerateResource.cache
+D:\repos\Arduino\1_CSharp_Win_Arudino_Control\Arduino_Serial\obj\Debug\Arduino_Serial.csproj.CoreCompileInputs.cache
+D:\repos\Arduino\1_CSharp_Win_Arudino_Control\Arduino_Serial\obj\Debug\Arduino_Serial.exe
+D:\repos\Arduino\1_CSharp_Win_Arudino_Control\Arduino_Serial\obj\Debug\Arduino_Serial.pdb
