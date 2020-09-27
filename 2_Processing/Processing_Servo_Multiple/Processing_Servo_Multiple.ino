@@ -4,6 +4,7 @@ Servo servoSecond;
 
 int val_1;
 int val_2;
+int pos = 0;
 
 void setup() {
   Serial.begin(9600);
@@ -22,11 +23,21 @@ void loop() {
   }
   if (val_1 == '1')
   {
-    servoFirst.write(45);
-    servoSecond.write(90);
+    for (pos = 1; pos <= 45; pos++) {
+        servoFirst.write(pos + 45);
+        servoSecond.write(pos + 90);
+        delay(100);
+    }
   } else {
-    servoFirst.write(90);
-    servoSecond.write(180);
+    for (pos = 0; pos <= 40; pos++) {
+        servoFirst.write(pos);
+        servoSecond.write(pos);
+        delay(200);
+    } for (pos = 40; pos > 0; pos--) {
+        servoFirst.write(pos);
+        servoSecond.write(pos);
+        delay(200);
+    }
   }
-  delay(50);
+  delay(500);
 }
