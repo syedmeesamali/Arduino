@@ -1,7 +1,10 @@
 import processing.serial.*;    //Include the serial object library
 Serial myPort;
 int serialVal = 0;
-Button on_button;
+Button deg_45;
+Button deg_90;
+Button deg_135;
+Button deg_180;
 int clk = 1;
 
 
@@ -16,37 +19,43 @@ void setup() {
   //background(40, 40, 40);
   frameRate(10);      //Canvas animation update frame-rate
   // create the button object
-  on_button = new Button("Click Me", 20, 20, 100, 50);
+  deg_45 = new Button("45 Degrees", 20, 20, 100, 50);
+  deg_90 = new Button("90 Degrees", 20, 80, 100, 50);
+  deg_135 = new Button("135 Degrees", 20, 140, 100, 50);
+  deg_180 = new Button("180 Degrees", 20, 200, 100, 50);
 }
 
 //Main draw function
 void draw() {
-  if (on_button.MouseIsOver()) {
-    rect(50, 20, 50, 50);
-  }
-  else {
-    // hide the square if the mouse cursor is not over the button
-    background(0);
-  }
-  // draw the button in the window
-  on_button.Draw();
-  if (mousePressed == true) {
-      println("1");
-      myPort.write('1');
-  } else {
-      println("0");
-      myPort.write('0');
-  }
+  
+  deg_45.Draw();
+  deg_90.Draw();
+  deg_135.Draw();
+  deg_180.Draw();
+  
 }
 
-// mouse button clicked
+// Mouse button clicked
 void mousePressed()
 {
-  if (on_button.MouseIsOver()) {
+  if (deg_45.MouseIsOver()) {
     // print some text to the console pane if the button is clicked
-    print("Clicked: ");
-    println(clk++);
+    myPort.write('1');
+    println("Sent 1 to serial port!");
+  } else if (deg_90.MouseIsOver()) {
+    myPort.write('2');
+    println("Sent 2 to serial port!");
+  } else if (deg_135.MouseIsOver()) {
+    myPort.write('3');
+    println("Sent 3 to serial port!");
+  } else if (deg_180.MouseIsOver()) {
+    myPort.write('4');
+    println("Sent 4 to serial port!");
+  } else {
+    myPort.write('0');
+    println("Sent 0 to serial port!");
   }
+  
 }
 
 //MAIN BUTTON CLASS
