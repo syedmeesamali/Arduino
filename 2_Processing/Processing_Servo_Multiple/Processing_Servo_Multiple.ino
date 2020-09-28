@@ -46,9 +46,25 @@ void loop() {
         delay(100);
         } 
     } else if (val == '0'){
-        servoFirst.write(pos--);
-        servoSecond.write(pos--);
-        delay(500);
+        servoFirst.write(0);
+        servoSecond.write(0);
+        delay(200);
+    } else if (val == '5'){
+        pos = pos + 1;
+        servoFirst.write(pos);
+        delay(200);
+    } else if (val == '6'){
+        pos = pos - 1;
+        servoFirst.write(pos);
+        delay(200);
+    } else if (val == '7'){
+        pos = pos + 1;
+        servoSecond.write(pos);
+        delay(200);
+    } else if (val == '8'){
+        pos = pos - 1;
+        servoSecond.write(pos);
+        delay(200);
     } 
   delay(500);
 }

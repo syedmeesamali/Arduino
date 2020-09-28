@@ -5,8 +5,10 @@ Button deg_45;
 Button deg_90;
 Button deg_135;
 Button deg_180;
-int clk = 1;
-
+Button increment_1;
+Button decrement_1;
+Button increment_2;
+Button decrement_2;
 
 //Main setup function
 void setup() {
@@ -23,6 +25,10 @@ void setup() {
   deg_90 = new Button("90 Degrees", 20, 80, 100, 50);
   deg_135 = new Button("135 Degrees", 20, 140, 100, 50);
   deg_180 = new Button("180 Degrees", 20, 200, 100, 50);
+  increment_1 = new Button("Increase Motor-1", 300, 20, 150, 40);
+  decrement_1 = new Button("Decrease Motor-1", 300, 80, 150, 40);
+  increment_2 = new Button("Increase Motor-2", 300, 140, 150, 40);
+  decrement_2 = new Button("Decrease Motor-2", 300, 200, 150, 40);
 }
 
 //Main draw function
@@ -32,7 +38,10 @@ void draw() {
   deg_90.Draw();
   deg_135.Draw();
   deg_180.Draw();
-  
+  increment_1.Draw();
+  decrement_1.Draw();
+  increment_2.Draw();
+  decrement_2.Draw();
 }
 
 // Mouse button clicked
@@ -51,9 +60,20 @@ void mousePressed()
   } else if (deg_180.MouseIsOver()) {
     myPort.write('4');
     println("Sent 4 to serial port!");
+  } else if (increment_1.MouseIsOver()) {
+    myPort.write('5');
+    println("Sent 5 to serial port!");
+  } else if (decrement_1.MouseIsOver()) {
+    myPort.write('6');
+    println("Sent 6 to serial port!");
+  } else if (increment_2.MouseIsOver()) {
+    myPort.write('7');
+    println("Sent 7 to serial port!");
+  } else if (decrement_2.MouseIsOver()) {
+    myPort.write('8');
+    println("Sent 8 to serial port!");
   } else {
     myPort.write('0');
-    println("Sent 0 to serial port!");
   }
   
 }
