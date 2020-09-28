@@ -8,9 +8,9 @@ int pos = 0;
 void setup() {
   Serial.begin(9600);
   servoFirst.attach(9);     //Attach on pin # 9 of arduino
-  servoFirst.write(0);      //Zero the inital position
+  servoFirst.write(45);      //Zero the inital position
   servoSecond.attach(8);      //Zero the inital position
-  servoSecond.write(0);      //Zero the inital position
+  servoSecond.write(45);      //Zero the inital position
 }
 
 
@@ -21,33 +21,15 @@ void loop() {
     val = Serial.read();      //Read the value and store in val
   }
   if (val == '1')
-  {
-    for (pos = 1; pos <= 45; pos++) {
+    {
+    for (pos = 75; pos >= 25; pos--) {
         servoFirst.write(pos);
         servoSecond.write(pos);
         delay(100);
-    }
-    } else if (val == '2') {
-    for (pos = 45; pos <= 90; pos++) {
-        servoFirst.write(pos);
-        servoSecond.write(pos);
-        delay(100);
-    } 
-    } else if (val == '3') {
-    for (pos = 90; pos <= 135; pos++) {
-        servoFirst.write(pos);
-        servoSecond.write(pos);
-        delay(100);
-      } 
-    } else if (val == '4') {
-    for (pos = 135; pos <= 180; pos++) {
-        servoFirst.write(pos);
-        servoSecond.write(pos);
-        delay(100);
-        } 
+        }
     } else if (val == '0'){
-        servoFirst.write(0);
-        servoSecond.write(0);
+        servoFirst.write(45);
+        servoSecond.write(45);
         delay(200);
     } else if (val == '5'){
         pos = pos + 1;
