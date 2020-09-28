@@ -2,8 +2,7 @@
 Servo servoFirst;
 Servo servoSecond;
 
-int val_1;
-int val_2;
+int val;
 int pos = 0;
 
 void setup() {
@@ -19,25 +18,37 @@ void setup() {
 void loop() {
   if (Serial.available()) 
   {
-    val_1 = Serial.read();      //Read the value and store in val
+    val = Serial.read();      //Read the value and store in val
   }
-  if (val_1 == '1')
+  if (val == '1')
   {
     for (pos = 1; pos <= 45; pos++) {
-        servoFirst.write(pos + 45);
-        servoSecond.write(pos + 90);
+        servoFirst.write(pos);
+        servoSecond.write(pos);
         delay(100);
     }
-  } else {
-    for (pos = 0; pos <= 40; pos++) {
+    } else if (val == '2') {
+    for (pos = 45; pos <= 90; pos++) {
         servoFirst.write(pos);
         servoSecond.write(pos);
-        delay(200);
-    } for (pos = 40; pos > 0; pos--) {
+        delay(100);
+    } 
+    } else if (val == '3') {
+    for (pos = 90; pos <= 135; pos++) {
         servoFirst.write(pos);
         servoSecond.write(pos);
-        delay(200);
-    }
-  }
+        delay(100);
+      } 
+    } else if (val == '4') {
+    for (pos = 135; pos <= 180; pos++) {
+        servoFirst.write(pos);
+        servoSecond.write(pos);
+        delay(100);
+        } 
+    } else if (val == '0'){
+        servoFirst.write(pos--);
+        servoSecond.write(pos--);
+        delay(500);
+    } 
   delay(500);
 }
