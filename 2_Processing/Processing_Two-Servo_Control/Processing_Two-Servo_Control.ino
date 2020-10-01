@@ -21,27 +21,27 @@ void loop() {
     val = Serial.read();      //Read the value and store in val
   }
   switch(val) {
-      case '1':
+      case '1':                 //Make a stroke with robotic arm from top left to bottom right in a good speed
         {
-          servoFirst.write(90);
-          delay(500);
-          servoSecond.write(100);
-          delay(500);
+          servoFirst.write(100);
+          delay(300);
+          servoSecond.write(140);
+          delay(300);
           servoFirst.write(30);
-          servoSecond.write(20);  
+          servoSecond.write(70);  
         }
         break;
-      case '2':
+      case '2':               //STOP the motors at particular position
         {
           servoFirst.write(45);
           servoSecond.write(80);
           delay(200);  
         }
         break;
-      case '3':
+      case '3':             //Increase position of Motor - 1
         {
           if (pos < 180) {
-          pos = pos + 1;
+          pos = pos + 5;
           servoFirst.write(pos);
           delay(200);
           } else {
@@ -50,10 +50,10 @@ void loop() {
           }  
         }
         break;
-       case '4':
+       case '4':          //Decrease position of Motor - 1
         {
           if (pos > 40) {
-            pos = pos - 1;
+            pos = pos - 5;
             servoFirst.write(pos);
           delay(200);
           } else {
@@ -62,10 +62,10 @@ void loop() {
           }
         }
         break;
-      case '5':
+      case '5':       //Increase position of Motor - 2
         {
           if (pos < 180) {
-          pos = pos + 1;
+          pos = pos + 5;
           servoSecond.write(pos);
           delay(200);
           } else {
@@ -76,12 +76,12 @@ void loop() {
         break;
        case '6':
         {
-          if (pos > 40) {
-            pos = pos - 1;
+          if (pos > 70) {     //Decrease position of Motor - 2
+            pos = pos - 5;
             servoSecond.write(pos);
           delay(200);
           } else {
-          pos = 40;
+          pos = 60;
           servoSecond.write(pos);
           }
         }
@@ -89,5 +89,5 @@ void loop() {
   
   } //End of switch case 
   
-  delay(500);
+  delay(300);
 }
