@@ -3,7 +3,7 @@ Serial myPort;
 int serialVal = 0;
 
 Button simple_stroke;
-Button stopMotors;
+Button parkMotors;
 Button increment_1;
 Button decrement_1;
 Button increment_2;
@@ -21,7 +21,7 @@ void setup() {
   frameRate(10);      //Canvas animation update frame-rate
   // create the button object
   simple_stroke = new Button("Simple Stroke", 20, 20, 150, 50);
-  stopMotors = new Button("Stop Motors", 20, 80, 150, 50);
+  parkMotors = new Button("Park Motors", 20, 80, 150, 50);
   increment_1 = new Button("Increase Motor-1", 220, 20, 150, 40);
   decrement_1 = new Button("Decrease Motor-1", 220, 80, 150, 40);
   increment_2 = new Button("Increase Motor-2", 220, 140, 150, 40);
@@ -31,7 +31,7 @@ void setup() {
 //Main draw function to draw the buttons only
 void draw() {
   simple_stroke.Draw();
-  stopMotors.Draw();
+  parkMotors.Draw();
   increment_1.Draw();
   decrement_1.Draw();
   increment_2.Draw();
@@ -44,7 +44,7 @@ void mousePressed()
   if (simple_stroke.MouseIsOver()) {
     myPort.write('1');
     println("Sent 1 to serial port!");
-  } else if (stopMotors.MouseIsOver()) {
+  } else if (parkMotors.MouseIsOver()) {
     myPort.write('2');
     println("Sent 2 to serial port!");
   } else if (increment_1.MouseIsOver()) {
