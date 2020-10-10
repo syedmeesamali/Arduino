@@ -38,7 +38,7 @@ void loop() {
   switch(val) {
       case '1':                 //Make a stroke with robotic arm from top left to bottom right in a good speed
         {
-          if (inches < 2) {         //Read the distance less than 2cm and then make stroke else not
+          if (inches < 4) {         //Read the distance less than 2cm and then make stroke else not
               servoFirst.write(100);
               delay(300);
               servoSecond.write(140);
