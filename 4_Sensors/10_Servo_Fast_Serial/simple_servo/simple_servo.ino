@@ -11,11 +11,12 @@ void setup() {
 void loop() {
   for (int i=0; i<=180; i++) {
       myServo.write(i);     //Sweep 0 to 180
-      delay(20);
+      delay(50);
   }
+  delay(3000);
   for (int i=180; i>=0; i--) {
       myServo.write(i);   //Sweep 180 to 0
-      delay(20);
+      delay(50);
   }
-  delay(2500);
+  delay(3000);
 }
