@@ -1,8 +1,8 @@
 #include<Servo.h>
 Servo servoFirst;
 Servo servoSecond;
-int trigPin = 11;       //Trigger pin
-int echoPin = 12;       //Echo response pin
+int trigPin = 7;       //Trigger pin
+int echoPin = 6;       //Echo response pin
 long duration, cm, inches;
 
 int val;
@@ -10,9 +10,9 @@ int pos = 45;
 
 void setup() {
   Serial.begin(9600);
-  servoFirst.attach(9);     //Attach on pin # 9 of arduino
-  servoFirst.write(45);      //Zero the inital position
-  servoSecond.attach(8);      //Zero the inital position
+  servoFirst.attach(8);     //Attach on pin # 9 of arduino
+  servoFirst.write(60);      //Zero the inital position
+  servoSecond.attach(10);      //Zero the inital position
   servoSecond.write(80);      //Zero the inital position
   pinMode(trigPin, OUTPUT);   //Trigger pin to throw the signal sound waves
   pinMode(echoPin, INPUT);    //Echo pin for input of distance
@@ -39,12 +39,12 @@ void loop() {
       case '1':                 //Make a stroke with robotic arm from top left to bottom right in a good speed
         {
           if (inches < 4) {         //Read the distance less than 2cm and then make stroke else not
-              servoFirst.write(100);
+              servoFirst.write(130);
+              //delay(300);
+              servoSecond.write(130);
               delay(300);
-              servoSecond.write(140);
-              delay(300);
-              servoFirst.write(30);
-              servoSecond.write(70);  
+              servoFirst.write(70);
+              servoSecond.write(30);  
           }
         }
         break;

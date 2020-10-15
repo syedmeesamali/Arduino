@@ -6,8 +6,8 @@ float angle;
 float distance;
 String data = "";
 int index = 0;
-int xpos = 0;
-int ypos = 0;
+int xpos = 100;
+int ypos = 100;
 
 //Main setup portion
 void setup () {
@@ -23,7 +23,7 @@ void setup () {
 void draw() {
   fill(255, 0, 0);
   noStroke();
-  ellipse(xpos, ypos, 3, 3);
+  ellipse(xpos, ypos, 10, 10);
 }
 
 //Main serial event to be recorded
@@ -35,6 +35,6 @@ void serialEvent (Serial port)
   angle = float(data.substring(0, index));
   distance = float(data.substring(index + 1, data.length()));
   
-  xpos = int(distance * cos(radians(angle)));
-  ypos = int(distance * sin(radians(angle)));
+  xpos = 100 + int(distance * cos(radians(angle)));
+  ypos = 100 + int(distance * sin(radians(angle)));
 }
