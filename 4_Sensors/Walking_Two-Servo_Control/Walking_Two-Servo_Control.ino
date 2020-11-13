@@ -21,15 +21,13 @@ void loop() {
   switch(val) {
       case '1':                 //Make a stroke with robotic arm from top left to bottom right in a good speed
         {
-              servoFirst.write(10);      //Increase is CCW
-              servoSecond.write(0);      //Increase is CCW
+              servoFirst.write(20);      //Increase is CCW
               delay(300);
-              servoFirst.write(0);
-              servoSecond.write(10);     //DECREASE is CCW
-              delay(300);
-              servoFirst.write(20);
               servoSecond.write(0);     //DECREASE is CCW
               delay(300);
+              servoFirst.write(20);     //Increase is CCW
+              delay(300);
+              servoSecond.write(0);     //DECREASE is CCW
           }
         break;
       //------------New case----------
