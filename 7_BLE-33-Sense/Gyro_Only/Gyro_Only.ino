@@ -17,7 +17,7 @@ void loop()
   if (IMU.gyroscopeAvailable()) {
     IMU.readGyroscope(gyro_x, gyro_y, gyro_z);
     //Serial.print("Gyroscope = %3.2f", gyro_x, gyro_y, gyro_z);
-    Serial.print(gyro_x); Serial.print(", ");Serial.print(gyro_y);Serial.print("- ");Serial.print(gyro_z);Serial.print(";\n");
+    Serial.print(gyro_x); Serial.print(",");Serial.print(gyro_y);Serial.print(",");Serial.print(gyro_z);Serial.print(";\n");
   }
   delay(1000);
 }

@@ -8,8 +8,9 @@ float z_val;
 String data = "";
 int index1 = 0;
 int index2 = 0;
-float xpos = 100;
-float ypos = 100;
+int xpos = 100;
+int ypos = 100;
+int zpos = 20;
 
 //Main setup code
 void setup()
@@ -25,23 +26,27 @@ void setup()
 //Main draw function
 void draw()
 {
-  fill(255, 0, 0);      //Red color
+  fill(255, 0, zpos);      //Red color
   noStroke();
   ellipse(xpos, ypos, 10, 10);
 } //End of draw
 
-void SerialEvent (Serial myPort)
+void serialEvent(Serial myPort)
 {
-  print("Within serial now:");
   data = myPort.readStringUntil(';');
-  print("Data: ", data);
-  data = data.substring(0, data.length() - 1);
-  index1 = data.indexOf(',');
-  index2 = data.indexOf('-');
-  x_val = float(data.substring(0, index1));
-  y_val = float(data.substring(index1, index2));
-  print("X_val: ", x_val);
-  print("Y_val: ", y_val);
-  xpos = 100 + x_val;
-  ypos = 100 + y_val;
+  if (data != null)
+  {
+    float[] list = float(splitTokens(data, ","));
+    x_val = list[0];
+    y_val = list[1];
+    z_val = list[2];
+    print("X_val: ", x_val);
+    print("Y_val: ", y_val);
+    print("Z_val: ", z_val);
+    print("\n");
+    xpos = 100 + int(x_val)*2;
+    ypos = 100 + int(y_val)*2;
+    zpos = int(z_val)*2;
+    redraw();
+  }
 }
