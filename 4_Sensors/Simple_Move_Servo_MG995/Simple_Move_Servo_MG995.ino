@@ -1,6 +1,7 @@
 #include<Servo.h>
 Servo servoFirst;
-int pos = 0;
+int pos_x = 0;
+int pos_y = 0;
 int VRx = A0;
 int VRy = A1;
 int SW = 2;
@@ -20,14 +21,10 @@ void setup() {
 void loop() {
   xPosition = analogRead(VRx);
   yPosition = analogRead(VRy);
-  pos = map(xPosition, 0, 1023, 0, 180);
-  //pos = map(yPosition, 0, 1023, 0, 180);
-  servoFirst.write(pos * 10);
-  delay(100);
-  /*for (pos = 0; pos < 2000; pos += 20)
-  {
-    servoFirst.write(pos);
-    delay(100);
-  }
-  delay(300);*/
+  pos_x = map(xPosition, 0, 1023, -180, 180);
+  pos_y = map(yPosition, 0, 1023, -180, 180);
+  Serial.print(pos_x);Serial.print(",");
+  Serial.print(pos_y);Serial.print(";\n");
+  servoFirst.write(pos_x * 10);
+  delay(200);
 }
