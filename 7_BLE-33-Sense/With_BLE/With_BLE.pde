@@ -40,13 +40,14 @@ void serialEvent(Serial myPort)
     x_val = list[0];
     y_val = list[1];
     z_val = list[2];
+    print("list: ", list);
     print("X_val: ", x_val);
     print("Y_val: ", y_val);
-    print("Z_val: ", z_val);
+    print("Z_val: ", list[2]);
     print("\n");
     xpos = 100 + int(x_val)*2;
     ypos = 100 + int(y_val)*2;
-    zpos = int(z_val)*2;
+    zpos = 100 + int(z_val)*2;
     redraw();
   }
 }
