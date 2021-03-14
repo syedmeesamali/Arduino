@@ -17,14 +17,8 @@ void setup() {
 
 //Main running loop of program
 void loop() {
-  if (Serial.available()) 
-  {
-    val = Serial.read();      //Read the value and store in val
-  }
-  switch(val) {
-      case '1':                 //Grab the object
-        {   gripper.write(180);     }   break;
-      case '2':                 //Release the gripper
-        {   gripper.write(120);     }   break;
-  } 
+  gripper.write(120);
+  delay(500);
+  gripper.write(180);
+  delay(4000);
 }
